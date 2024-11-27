@@ -1,0 +1,40 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-sizing: border-box;
+    padding: 20px;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  .card {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    padding: 20px;
+    background-image: url("/picture/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 336px;
+    height: 192px;
+  }
+  
+  .card h2 {
+    margin: 0 0 10px;
+    color: #333;
+    font-family: Syne;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16.8px;
+    text-align: left;
+  }
+  .card p {
+    margin: 5px 0;
+    font-size: 8px;
+    color: black;
+    position: relative;
+    top: 60px;
+    left: 5px;
+    display: flex;
+    align-items: center;
+  }
