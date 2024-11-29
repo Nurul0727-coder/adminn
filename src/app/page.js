@@ -1,25 +1,26 @@
-"user client";
-import userData from "./userData";
-import Component from "./component.js";
-import React from "react";
-import "./style.css";
+// "use client";
+// import { useState } from "react";
+// import userData from "./userData";
+// import Component from "./component.js";
+// import React from "react";
+// import "./style.css";
 
-export default function Home() {
-  return (
-    <div className="cardContainer">
-      {userData.map((user) => {
-        return <Component user={user} />;
-      })}
-    </div>
-  );
-}
-const Greeting = (props) => {
-  return (
-    <div>
-      Hi {props.name} {props.age}
-    </div>
-  );
-};
+// export default function Home() {
+//   return (
+//     <div className="cardContainer">
+//       {userData.map((user) => {
+//         return <Component user={user} />;
+//       })}
+//     </div>
+//   );
+// }
+// const Greeting = (props) => {
+//   return (
+//     <div>
+//       Hi {props.name} {props.age}
+//     </div>
+//   );
+// };
 
 // export default function Page() {
 //   return (
@@ -57,3 +58,82 @@ const Greeting = (props) => {
 //     </>
 //   );
 // }
+
+//+,-
+// export default function Numbers() {
+//   const [numbers, setNumber] = useState(0); //1
+
+//   const addNumber = () => {
+//     setNumber(numbers + 1);
+//   };
+//   const hasyoo = () => {
+//     setNumber(numbers - 1);
+//   };
+//   const urjih2 = () => {
+//     setNumber(numbers * 2);
+//   };
+//   return (
+//     <div className="Numbers">
+//       <button onClick={addNumber}> {numbers} Next </button>
+//       <button style={{ marginLeft: "20px" }} onClick={hasyoo}>
+//         {numbers}
+//         {} hasah{" "}
+//       </button>
+//       <button style={{ marginLeft: "20px" }} onClick={urjih2}>
+//         {numbers}
+//         {} urjih{" "}
+//       </button>
+//       {/* <p>{user}</p> */}
+//     </div>
+//   );
+// }
+
+"use client";
+import { useState } from "react";
+
+export default function Page() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  return (
+    <div>
+      <button onClick={openModal}>add</button>
+      {isOpen && (
+        <div
+          style={{
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.4)",
+            alignContent: "center",
+          }}
+        >
+          <div
+            style={{
+              height: 500,
+              width: 800,
+              backgroundColor: "lightblue",
+              borderRadius: 16,
+              margin: "auto",
+              padding: 48,
+            }}
+          >
+            <button onClick={closeModal}>close</button>
+            <input
+              style={{
+                width: 256,
+                height: 56,
+                border: "1px solid black",
+                padding: 4,
+              }}
+              placeholder="task"
+            ></input>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
