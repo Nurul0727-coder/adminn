@@ -89,7 +89,7 @@
 // }
 
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
@@ -136,4 +136,37 @@ export default function Page() {
       )}
     </div>
   );
+  export default function Home() {
+    const [count, setCount] = useState(0);
+    console.log('rendering again');
+    
+    useEffect((=> {
+      if (count === 5) {
+        console.log('You clicked 5 times');
+      }
+    }))
+
+    useEffect(async() => {
+      console.log('useEffect');
+      const response = await fetch('https://api.thecatapi.com/v1/images/0XYvRd7oD');
+      const data = await response.json();
+      console.log(data);
+    },[]);
+    return (
+      <div
+        className={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '100vh',
+        }}  
+      >
+        <button onClick={() => {
+          
+        }}>
+
+        </button>
+      </div>
+    )
+  }
 }
